@@ -1,0 +1,17 @@
+<!doctype html>
+<html>
+<head><title>Dashboard</title></head>
+<body>
+  <h2>Private Cloud - File Dashboard</h2>
+  <form action="/upload" method="post" enctype="multipart/form-data">
+    <input type="file" name="file">
+    <input type="submit" value="Upload">
+  </form>
+  <ul>
+    {% for file in files %}
+      <li>{{ file }} - <a href="/download/{{ file }}">Download</a></li>
+    {% endfor %}
+  </ul>
+  <a href="/logout">Logout</a>
+</body>
+</html>
